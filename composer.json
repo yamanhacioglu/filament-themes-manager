@@ -7,7 +7,7 @@
         "spatie/laravel-package-tools": "*",
         "spatie/laravel-medialibrary": "*",
         "spatie/laravel-data": "*",
-        "filament/filament": "3.x-dev",
+        "filament/filament": "^3.2",
         "spatie/enum": "*"
     },
     "license": "MIT",
