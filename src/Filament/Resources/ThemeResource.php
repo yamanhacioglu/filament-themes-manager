@@ -3,6 +3,8 @@
 namespace Northlab\FilamentThemeManager\Filament\Resources;
 
 use Filament\Forms;
+use Filament\Navigation\NavigationItem;
+use Filament\Support\Enums\IconPosition;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
@@ -28,6 +30,24 @@ class ThemeResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-collection';
     protected static ?string $navigationGroup = 'Appearance';
     protected static ?int $navigationSort = 1;
+
+    public static function getNavigationItems(): array
+    {
+        return [
+            NavigationItem::make()
+                ->group(static::getNavigationGroup())
+                ->icon(static::getNavigationIcon())
+                ->label(static::getNavigationLabel())
+                ->sort(static::getNavigationSort())
+                ->badge(static::getNavigationBadge())
+                ->url(static::getNavigationUrl()),
+        ];
+    }
+
+    public static function shouldRegisterNavigation(): bool
+    {
+        return true;
+    }
 
     public static function getModel(): string
     {
