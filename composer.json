@@ -1,0 +1,35 @@
+{
+    "name": "northlab/filament-themes-manager",
+    "description": "hexadog/laravel-themes-manager adapter for Filament v3",
+    "require": {
+        "php" : "^8.3|^8.4",
+        "hexadog/laravel-themes-manager": "*",
+        "spatie/laravel-package-tools": "*",
+        "spatie/laravel-medialibrary": "*",
+        "spatie/laravel-data": "*",
+        "filament/filament": "3.x-dev",
+        "spatie/enum": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Northlab\\FilamentThemesManager\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Yaman HACIOĞLU",
+            "email": "yaman@yamanhacioglu.com.tr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "hexadog/laravel-theme-installer": true
+        }
+    }
+}
