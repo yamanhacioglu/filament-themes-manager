@@ -19,7 +19,7 @@ class FilamentThemeManagerServiceProvider extends PluginServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-theme-manager')
+            ->name('filament-themes-manager')
             ->hasViews()
             ->hasMigrations([
                 'create_themes',
@@ -31,7 +31,7 @@ class FilamentThemeManagerServiceProvider extends PluginServiceProvider
 
     public function packageBooted(): void
     {
-        $themeModel = config('filament-theme-manager.theme_model', Theme::class);
+        $themeModel = config('filament-themes-manager.theme_model', Theme::class);
         $themeModel::observe(ThemeObserver::class);
 
         Livewire::component('theme-setting', \Northlab\FilamentThemeManager\Http\Livewire\Form\ThemeSetting::class);
@@ -44,17 +44,17 @@ class FilamentThemeManagerServiceProvider extends PluginServiceProvider
                 ->plugin(new class implements \Filament\Contracts\Plugin {
                     public function getId(): string
                     {
-                        return 'filament-theme-manager';
+                        return 'filament-themes-manager';
                     }
 
                     public function register(Panel $panel): void
                     {
                         $panel
                             ->resources([
-                                config('filament-theme-manager.theme_resource', ThemeResource::class),
+                                config('filament-themes-manager.theme_resource', ThemeResource::class),
                             ])
                             ->pages([
-                                \Northlab\FilamentThemeManager\Filament\Pages\ThemeSetting::class,
+                                ThemeSetting::class,
                             ]);
                     }
 
