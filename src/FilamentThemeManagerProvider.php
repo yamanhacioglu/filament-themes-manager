@@ -4,7 +4,9 @@ namespace Northlab\FilamentThemeManager;
 
 require_once('helpers.php');
 
-use Filament\Support\ServiceProvider;
+use Filament\Support\Facades\FilamentAsset;
+use Filament\Support\Facades\FilamentIcon;
+use Illuminate\Support\ServiceProvider;
 use Filament\Panel;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
@@ -13,8 +15,9 @@ use Northlab\FilamentThemeManager\Enum\AssetCompilerEnum;
 use Northlab\FilamentThemeManager\Observers\ThemeObserver;
 use Northlab\FilamentThemeManager\Filament\Resources\ThemeResource;
 use Northlab\FilamentThemeManager\Filament\Pages\ThemeSetting;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentThemeManagerServiceProvider extends ServiceProvider
+class FilamentThemeManagerServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
